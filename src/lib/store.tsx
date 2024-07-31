@@ -1,13 +1,11 @@
 import { create } from "zustand";
 
 type todo = {
-    count: number;
-    increaseCount: () => void;
-    decreaseCount: () => void;
+    list: Array<string>;
+    addList: (text: string) => void;
 };
 
 export const todoStore = create<todo>((set) => ({
-    count: 0,
-    increaseCount: () => set((state) => ({ count: state.count + 1 })),
-    decreaseCount: () => set((state) => ({ count: state.count - 1 })),
+    list: [],
+    addList: (text) => set((state) => ({ list: [...state.list, text] })),
 }));

@@ -1,7 +1,8 @@
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Post from "./components/Post";
-import Todo from "./components/Todo";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
 
 import { queryClient } from "./lib/client";
 import "./App.css";
@@ -11,7 +12,8 @@ function App() {
         <div className="App">
             <QueryClientProvider client={queryClient}>
                 <Post />
-                <Todo />
+                <TodoForm />
+                <TodoList />
                 <ReactQueryDevtools />
             </QueryClientProvider>
         </div>
